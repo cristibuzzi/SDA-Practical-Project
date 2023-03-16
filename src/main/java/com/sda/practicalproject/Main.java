@@ -42,7 +42,7 @@ public class Main {
                     vetController.createVet();
                     break;
                 case UPDATE_VET:
-                    System.out.println("Update vet not implemented");
+                    vetController.updateVet();
                     break;
                 case DELETE_VET:
                     System.out.println("Delete vet not implemented");
@@ -50,6 +50,8 @@ public class Main {
                 case VIEW_VET_LIST:
                     vetController.displayAllVets();
                     break;
+                case VIEW_VET_BY_ID:
+                    vetController.findVetById();
                 case EXIT:
                     System.out.println("Good bye!");
                     break;
