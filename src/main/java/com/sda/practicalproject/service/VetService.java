@@ -1,6 +1,9 @@
 package com.sda.practicalproject.service;
 
+import com.sda.practicalproject.model.Vet;
 import com.sda.practicalproject.repositories.exception.EntityUpdateFailedException;
+
+import java.util.List;
 
 public interface VetService {
 
@@ -11,4 +14,5 @@ public interface VetService {
             String speciality
     ) throws EntityUpdateFailedException;
 
+    List<Vet> getAllVets();
 }
