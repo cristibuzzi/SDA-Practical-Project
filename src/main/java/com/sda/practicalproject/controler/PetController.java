@@ -1,5 +1,6 @@
 package com.sda.practicalproject.controler;
 
+import com.sda.practicalproject.model.Pet;
 import com.sda.practicalproject.repositories.exception.EntityUpdateFailedException;
 import com.sda.practicalproject.service.PetService;
 
@@ -48,5 +49,10 @@ public class PetController {
             System.err.println("Internal server error");
             e.printStackTrace();
         }
+    }
+
+    public void viewAllPets() {
+        petService.getAllPets().stream()
+                .forEach(pet -> System.out.println(pet.getId() + " " + pet.getRace() + " " + pet.getOwnerName()));
     }
 }

@@ -3,13 +3,11 @@ package com.sda.practicalproject;
 import com.sda.practicalproject.controler.PetController;
 import com.sda.practicalproject.controler.VetController;
 import com.sda.practicalproject.controler.menu.MenuItem;
-import com.sda.practicalproject.repositories.PetReporisotyImpl;
-import com.sda.practicalproject.repositories.PetRepository;
+import com.sda.practicalproject.repositories.PetRepositoryImpl;
 import com.sda.practicalproject.repositories.VetRepositoryImpl;
 import com.sda.practicalproject.service.PetServiceImpl;
 import com.sda.practicalproject.service.VetServiceImpl;
 import com.sda.practicalproject.utils.SessionManager;
-import org.hibernate.Session;
 
 import java.util.Scanner;
 
@@ -25,7 +23,7 @@ public class Main {
 
         PetController petController = new PetController(
                 scanner,
-                new PetServiceImpl(new PetReporisotyImpl())
+                new PetServiceImpl(new PetRepositoryImpl())
 
         );
 
@@ -65,6 +63,9 @@ public class Main {
                     break;
                 case ADD_PET:
                     petController.createPet();
+                    break;
+                case VIEW_PET_LIST:
+                    petController.viewAllPets();
                     break;
                 case EXIT:
                     System.out.println("Good bye!");

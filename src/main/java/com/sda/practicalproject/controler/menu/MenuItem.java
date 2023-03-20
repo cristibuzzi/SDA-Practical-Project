@@ -7,6 +7,7 @@ public enum MenuItem {
     VIEW_VET_LIST(4, "View vet list"),
     VIEW_VET_BY_ID(5, "View vet by id"),
     ADD_PET(6, "Add pet"),
+    VIEW_PET_LIST(7,"View pet list"),
     EXIT(100, "Exit"),
     UNKNOWN(999, "Unknown option");
 
