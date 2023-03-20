@@ -54,7 +54,7 @@ public class VetServiceImpl implements VetService {
             throw new IllegalArgumentException("Speciality is null or blank");
         }
         Optional<Vet> optionalVet = vetRepository.findById(id);
-        if(optionalVet.isPresent()) {
+        if (optionalVet.isPresent()) {
             Vet vet = optionalVet.get();
             vet.setLastName(lastName);
             vet.setAddress(address);
@@ -71,5 +71,18 @@ public class VetServiceImpl implements VetService {
             throw new IllegalArgumentException("Id is less or equal to zero");
         }
         return vetRepository.findById(id);
+    }
+
+    @Override
+    public void deleteVetById(long id) throws EntityUpdateFailedException, EntityNotFoundException {
+        if (id <= 0) {
+            throw new IllegalArgumentException("Id is less or equal to zero");
+        }
+        Optional<Vet> vetOptional = vetRepository.findById(id);
+        if (vetOptional.isPresent()) {
+            vetRepository.delete(vetOptional.get());
+        } else {
+            throw new EntityNotFoundException("Vet not found by id: " + id);
+        }
     }
 }

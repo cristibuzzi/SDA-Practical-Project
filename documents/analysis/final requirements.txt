@@ -1,3 +1,23 @@
+Pet Clinic management system:
+Java Desktop Application used for managing a pet clinic
+
+One window for CRUD operations on Veterinarian (firstname, lastname, address, speciality):
+    -allows the viewing of all the vets;
+    -adding a new vet;
+    -deleting an existing vet;
+    -updating an existing vet
+
+One window for CRUD operations on Pet (race, birthdate, isVaccinated, ownerName):
+    -allows the viewing of all the pets;
+    -adding a new pet;
+    -deleting an existing pet;
+    -updating an existing pet
+
+One window for Consult (veterinarian, pet, date, description):
+    -allows the viewing of all the consults;
+    -adding a new consult for an existing vet and an existing pet;
+    -updating the description of a consult
+
 - IMPLEMENT VET CREATION
  As a user I should be able to add a new vet with the following details: firstname, lastname, address, speciality. If the creation process is successful
 the system will allocate a unique id to the new vet.
@@ -36,7 +56,13 @@ If the given id is found in the system the vet will be deleted and a message
 will be shown on the screen.
 If the given id is not found in the system an appropriate error message will be shown on the screen.
 
-//////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 - IMPLEMENT PET CREATION
  As a user I should be able to add a new pet with the following details: race, birthdate, isVaccinated, ownerName. If the creation process is successful
@@ -74,7 +100,13 @@ If the given id is found in the system the pet will be deleted and a message
 will be shown on the screen.
 If the given id is not found in the system an appropriate error message will be shown on the screen.
 
-//////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 - IMPLEMENT CREATE CONSULT
 As a user I should be able to add a new consult with the following details: vet's id, pet's id, date, description. If the creation process is successful
