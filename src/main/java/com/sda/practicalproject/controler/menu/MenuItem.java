@@ -10,6 +10,7 @@ public enum MenuItem {
     VIEW_PET_LIST(7, "View pet list"),
     VIEW_PET_BY_ID(8, "View pet by id"),
     DELETE_PET_BY_ID(9, "Delete pet"),
+    UPDATE_PET(10,"Update pet"),
     EXIT(100, "Exit"),
     UNKNOWN(999, "Unknown option");
 

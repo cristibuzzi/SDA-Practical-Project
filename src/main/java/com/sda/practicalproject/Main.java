@@ -73,6 +73,9 @@ public class Main {
                 case DELETE_PET_BY_ID:
                     petController.deletePetById();
                     break;
+                case UPDATE_PET:
+                    petController.updatePet();
+                    break;
                 case EXIT:
                     System.out.println("Good bye!");
                     break;
