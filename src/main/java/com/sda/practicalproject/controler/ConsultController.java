@@ -84,4 +84,29 @@ public class ConsultController {
             e.printStackTrace();
         }
     }
+
+    public void updateConsultById() {
+        try {
+
+            System.out.println("Please insert consult id");
+            long id = Long.parseLong(scanner.nextLine().trim());
+            System.out.println("Please insert description");
+            String description = scanner.nextLine();
+            consultService.updateConsultById(id, description);
+            System.out.println("Consult updated");
+
+        } catch (NumberFormatException e) {
+            System.err.println("Please insert a number");
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        } catch (EntityUpdateFailedException e) {
+            System.err.println(e.getMessage());
+            System.out.println("Please retry");
+        } catch (EntityNotFoundException e) {
+            System.err.println(e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Internal server error");
+            e.printStackTrace();
+        }
+    }
 }

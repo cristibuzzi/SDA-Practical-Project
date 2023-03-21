@@ -72,4 +72,21 @@ public class ConsultServiceImpl implements ConsultService {
         }
         return consultRepository.findById(id);
     }
+
+    @Override
+    public void updateConsultById(long id, String description) throws EntityNotFoundException, EntityUpdateFailedException {
+        if (id <= 0) {
+            throw new IllegalArgumentException("Invalid consult id. Value must be greater than zero");
+        }
+        if (description == null || description.isBlank() || description.isEmpty()) {
+            throw new IllegalArgumentException("Invalid description, value must be not null or not blank");
+        }
+        Optional<Consult> optionalConsult = consultRepository.findById(id);
+        if (optionalConsult.isEmpty()) {
+            throw new EntityNotFoundException("Consult id not found");
+        }
+        Consult consult = optionalConsult.get();
+        consult.setDescription(description);
+        consultRepository.update(consult);
+    }
 }

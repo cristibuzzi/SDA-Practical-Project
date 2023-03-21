@@ -14,6 +14,7 @@ public enum MenuItem {
     CREATE_CONSULT(11, "Create consult"),
     VIEW_ALL_CONSULTS(12, "View all consults"),
     VIEW_CONSULT_BY_ID(13, "View Consult by id"),
+    UPDATE_CONSULT(14,"Update consult"),
     EXIT(100, "Exit"),
     UNKNOWN(999, "Unknown option");
 
