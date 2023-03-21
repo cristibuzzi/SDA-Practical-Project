@@ -75,6 +75,7 @@ public class PetServiceImpl implements PetService {
         if (optionalPet.isPresent()) {
             Pet pet = optionalPet.get();
             pet.setOwnerName(ownerName);
+            pet.setVaccinated(isVaccinated);
             petRepository.update(pet);
         } else {
             throw new EntityNotFoundException("Pet not found by id: " + id);

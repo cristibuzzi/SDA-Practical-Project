@@ -1,10 +1,13 @@
 package com.sda.practicalproject;
 
+import com.sda.practicalproject.controler.ConsultController;
 import com.sda.practicalproject.controler.PetController;
 import com.sda.practicalproject.controler.VetController;
 import com.sda.practicalproject.controler.menu.MenuItem;
+import com.sda.practicalproject.repositories.ConsultRepositoryImpl;
 import com.sda.practicalproject.repositories.PetRepositoryImpl;
 import com.sda.practicalproject.repositories.VetRepositoryImpl;
+import com.sda.practicalproject.service.ConsultServiceImpl;
 import com.sda.practicalproject.service.PetServiceImpl;
 import com.sda.practicalproject.service.VetServiceImpl;
 import com.sda.practicalproject.utils.SessionManager;
@@ -16,6 +19,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         SessionManager.getSessionFactory();
+
         VetController vetController = new VetController(
                 new VetServiceImpl(new VetRepositoryImpl()),
                 scanner
@@ -25,6 +29,14 @@ public class Main {
                 scanner,
                 new PetServiceImpl(new PetRepositoryImpl())
 
+        );
+        ConsultController consultController = new ConsultController(
+                new ConsultServiceImpl(
+                        new VetRepositoryImpl(),
+                        new PetRepositoryImpl(),
+                        new ConsultRepositoryImpl()
+                ),
+                scanner
         );
 
         for (int i = 1; i <= 100; i++) {
@@ -75,6 +87,15 @@ public class Main {
                     break;
                 case UPDATE_PET:
                     petController.updatePet();
+                    break;
+                case CREATE_CONSULT:
+                    consultController.createConsult();
+                    break;
+                case VIEW_ALL_CONSULTS:
+                    consultController.viewAllConsults();
+                    break;
+                case VIEW_CONSULT_BY_ID:
+                    consultController.viewConsultById();
                     break;
                 case EXIT:
                     System.out.println("Good bye!");

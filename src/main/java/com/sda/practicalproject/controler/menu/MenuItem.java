@@ -10,7 +10,10 @@ public enum MenuItem {
     VIEW_PET_LIST(7, "View pet list"),
     VIEW_PET_BY_ID(8, "View pet by id"),
     DELETE_PET_BY_ID(9, "Delete pet"),
-    UPDATE_PET(10,"Update pet"),
+    UPDATE_PET(10, "Update pet"),
+    CREATE_CONSULT(11, "Create consult"),
+    VIEW_ALL_CONSULTS(12, "View all consults"),
+    VIEW_CONSULT_BY_ID(13, "View Consult by id"),
     EXIT(100, "Exit"),
     UNKNOWN(999, "Unknown option");
 
